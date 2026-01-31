@@ -38,7 +38,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 22
           script: |
-            cd ~/myproject
+            cd ~/app/myproject
             git pull origin main
             docker-compose down
             docker-compose up -d --build
