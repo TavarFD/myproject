@@ -2,7 +2,7 @@ version: '3'
 
 services:
   flask-app:
-    image: flask-app-prod
+    build: ./app
     ports:
       - "80:5000"
     networks:
