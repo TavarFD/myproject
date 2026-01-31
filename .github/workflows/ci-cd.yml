@@ -30,15 +30,15 @@ jobs:
           push: true
           tags: tavarfd/flask-app-prod:latest
 
-- name: Deploy to EC2
-  uses: appleboy/ssh-action@v0.1.6
-  with:
-    host: ${{ secrets.EC2_HOST }}
-    username: ubuntu
-    key: ${{ secrets.EC2_SSH_KEY }}
-    port: 22
-    script: |
-      cd ~/myproject
-      git pull origin main
-      docker-compose down
-      docker-compose up -d --build
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          port: 22
+          script: |
+            cd ~/myproject
+            git pull origin main
+            docker-compose down
+            docker-compose up -d --build
