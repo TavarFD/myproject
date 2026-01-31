@@ -4,7 +4,7 @@ services:
   flask-app:
     image: flask-app-prod
     ports:
-      - "5000:5000"
+      - "80:5000"
     networks:
       - monitoring
 
